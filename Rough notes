@@ -1,0 +1,215 @@
+# GO THROUGH PHONE NOTE PAD AND COMPLETE HERE WITH CODE
+# https://www.r-bloggers.com/   OR   https://python-bloggers.com/
+# go through saved youtube videos
+# gop through saved reddit videos
+# go through links on phone
+# kaggle competitions
+# quantopian note books and lectures https://github.com/quantopian/research_public/blob/master/notebooks/lectures/Kalman_Filters/notebook.ipynb
+#"Machine Learning for Algorithmic Trading" --https://github.com/PacktPublishing/Machine-Learning-for-Algorithmic-Trading-Second-Edition_Original/tree/master/04_alpha_factor_research
+# ernest chan books on desktop
+# "Ernie Chan", coding jesus, Aswath Damodaran, quantopian on YouTube 
+# https://www.reddit.com/r/algotrading/comments/nu7p6w/all_about_algotrading_quantitative_analysis/
+# https://www.reddit.com/r/algotrading/wiki/index#wiki_how_to_get_historical_data_for_free
+# https://www.kaggle.com/competitions
+# https://www.kaggle.com/c/optiver-realized-volatility-prediction
+# https://github.com/quantopian/research_public
+# https://github.com/PacktPublishing/Machine-Learning-for-Algorithmic-Trading-Second-Edition_Original/tree/master/04_alpha_factor_research
+# complete ml walk through - https://github.com/Nyandwi/machine_learning_complete
+# fundamental analysis with ml - https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3706532
+# news sentiment https://www.youtube.com/watch?v=ZhpVP_9V-ms
+# https://www.youtube.com/watch?v=lgN82ERWRTE
+# https://www.kaggle.com/jiashenliu/introduction-to-financial-concepts-and-data
+# https://github.com/eugeneyan/applied-ml
+
+# non code places to look
+JMP for statistical analysis 
+quantshare for trading (has a nice gui for the non coders)
+Candlescanner (helps with identifying reoccurring opportunities)
+To get an idea, use Tradingview backtesting platform or amibroker, so that you can see what kind of inputs are given and what it gives in output.
+
+# if we move to cloud do we need any additional security checks for holding passwords or file paths - HashiCorp vault correct? or AWS has secrets manager
+                                  
+                                  # Python code libraries
+# https://www.quantconnect.com/docs/data-library/fundamentals
+# https://github.com/wilsonfreitas/awesome-quant
+# pathlib and statistics
+# prophet   https://facebook.github.io/prophet/
+# require(quantmod)
+# require(PerformanceAnalytics)
+# require(tseries)
+# mlfinlab
+# Backtrader
+# Zipline and other Python libraries for backtesting trading strategie
+# quadprog
+# flask
+# TA-Lib
+# sklearn
+# tensorflow
+# pytorch 
+# selenium 
+# COULD USE numba, jit, CUDA or cython (cython doesnt seem worthwhile but numba does OR JUST HAVE core stuff in a CC+ core with JS bindings) for process which have a long compute ie backtests  ... Also try out numba and pypy , jax ... numba seemns like a big improvement over numpy
+
+# pre processing libraries https://www.reddit.com/r/algotrading/comments/m9y9k6/a_look_at_a_few_modern_methods_of_data/
+pywavelets  -  Wavelet smoothing 
+
+help full guides in writing nice easy to read and clean code
+# flask is a framework to get started
+# Flask through an API with a javascript front end.
+# https://docs.python-guide.org/writing/reading/
+# pushshiftio for collecting the unstructured data and NLP for data cleaning
+# wily - gives summary of code complexitity https://github.com/tonybaloney/wily
+# code formatter https://black.readthedocs.io/en/latest/
+# python architecture rules - http://aosabook.org/en/index.html
+# https://emptysqua.re/blog/api-evolution-the-right-way/
+
+# IG - https://github.com/g-make-it/IG_Trading_Algo_Scripts_Python
+# binance API
+# Kaggle's Python API   https://www.reddit.com/r/kaggle/comments/p15hdx/installing_and_using_kaggles_python_api/
+# Zerodha's api for historical data
+# bbg = Blpapi SDK + the pdblp + BQNT
+# Alpaca API - https://alpaca.markets/  
+# Yahoo finance
+# google finance
+# TD Ameritrade
+# OANDA's API
+# if want to check other places, tradestation and easylanguage
+# could perform matching across sources to ensure accurarcy 
+
+                                   # Portfolio analysis
+# i could do retrospective analysis of our portfolio, if there is a large segment of the portfolio which stays the same over time = strategic allocation
+# if there is a % of portfolio which tilts over certain short periods = tactical allocation -- this may give a better understandng of the inv team trading patterns and directional bets
+# R's Return.portfolio function - has built in portfolio turnover 
+
+                                   # algo system design 
+# coding jesus series
+# Advances in Financial Machine Learning by Marcos Lopez de Prado is centered around the usage of ML but deals to some degree with system architecture, general workflow, data pipelines et
+# Professional Automated Trading: Theory and Practice https://b-ok.cc/book/2316430/632ce8?id=2316430&secret=632ce8 - 'An insider's view of how to develop and operate an automated proprietary trading network'. Code snippets are written on LISP.
+# look for white papers
+# server architecture - can run multiple node.js servers that conduct different tasks - one connects to api and stream data, another  aggregate already stored historical data all ran locally on your own machine. The advantage of running multiple tasks is so there is no thread blocking. You can create multi-threaded solutions. But in terms of project organization. These are great ways to separate the purpose of a server.
+# You can communicate between processes or node.js servers using a message broker. Common message brokers are RabbitMQ, redis and I've been toying around with Kafka. You can utilize http as a form of inner-communication. I've set up multiple REST servers to communicate with each other before.
+# Running on cloud can cost you money. General rule of thumb is don't spend money if you're not making any money. Same principle goes for api's that have subscription fees for premium access (usually unlimited data and closer to real time access for websockets).
+# I enjoy using docker for hosting my servers as containers. I also run a mysql server on a container as well for database storage.
+# could try to build an all-in-one app and follow the same architecture (based on Java or python)
+# but the general gist is, you connect to API's from multiple different exchanges. With TCP sockets (or websockets) you can subscribe to orderbook updates and trades provided by the exchanges.
+# As for deployment servers, the cloud works well enough for most, but dedicated machines may give an extra edge for those market makers where microseconds of latency count.
+
+                                   # Indicators outside of fundamental data
+ # http://epchan.blogspot.com/2021/09/welcome-to-our-feature-zoo-with-600.html?m=1
+ # use feature selection and cluster based feature selection to group and rank indictators https://www.youtube.com/watch?v=lgN82ERWRTE
+ # how multiple screens could work is if we can distinguish when indicators are not properly informing us of what we need, then we drop those type of indicators and move to the more core fundamental screen
+ # hotelings t2 is a typical multivariate model’s measure of when something has gone off the rails. It is kind of like if you plot new data, expect a linear response, and look at R2 to see if shit’s gone crazy, but with more dimensions.
+ # news sentiment, earning report sentiment and conensus estimates - we can then perform analysis on this to see which spefici analysts or estimates are correct
+ # compiling upgrades and downgrades
+ # can use RSI, bollinger bands for mean reversion short term trading
+ # short interest
+ # provide econ calandar for each country with our holdings
+ # news trading using RSS  https://www.reddit.com/r/algotrading/comments/mmyrlg/data_acquisition_for_news_trading/
+ # Iexcloud has some sentiment api with premium access
+ # Benzinga Squakbox or Bloomberg both offer instant news feed --> definitely not instant, they're redistributors and by definition slow
+ UDP stream stream + colo (co-location)
+ # USE AI for news content https://eventregistry.org/
+ # indicators based on earning reports/ research reports - ie sec reports and % gain since release etc to see if gain correlated to report
+ # NLP on things like investor conferences, management speeches, etc, and then using that to make a prediction of the earnings beforehand
+ #  look at price movement ahead of the earnings as well, as information leaks ahead of the event
+ # indicators from other market order
+ # indsider buys and sells
+ # Technical indicators
+ # Kalman filter filters (var reduction)  with OLSQ (trend prediction) -- need to look up R packages- fundemental to bayesian structural time series forecasts - Kalman filters are used to extract some of the noise from a noisy signal. - https://www.cis.upenn.edu/~mkearns/finread/filtering_in_finance.pdf
+ note book on quantopian  - You can use a Kalman Filter to estimate the beta between 2 or more stocks. Then, you can use that beta to perform a linear regression.
+https://github.com/quantopian/research_public/blob/master/notebooks/lectures/Kalman_Filters/notebook.ipynb
+also shown in chapter 4 and 9 of Machine Learning for Algorithmic Trading"  -- https://github.com/PacktPublishing/Machine-Learning-for-Algorithmic-Trading-Second-Edition_Original/tree/master/04_alpha_factor_research
+# altman z score
+ # any things from cfa?
+ # statistics on distribution or regression - R etc
+ # risk parameters
+ # well defined factors such as growth, inflation, credit spreads, interest rates etc, then factors on top of this to show out of line with the historical relationship with the set of macro factors.
+ # beta of stock return and portfolio return on factors
+ # economic, trade terms, weather (weather has bad forecast errors)
+ # Sometimes you can get a warning about a change in a stock's behavior by keeping an eye on changes in the implied volatility of the stock's options.
+ # find out ways to test these indicators over random periods in the past and visualise this to show reliability to team -- 
+ # also look into if its possible to optimise indicators results into a score similar to eip score usintg walkthrough optimisation or by seeing which indicator has greatest reliability of future returns over previous random periods
+ # than 2-3% and the holdings usually exceed 50 stocks. Every portfolio is effectively a macro portfolio even when it purports to be bottom up. However you pick the stocks, you usually end up with something that is largely driven by macro factors. For those that doubt the veracity of the paragraph take a look at Chapter IX of Portfolio Analysis by J.C. Francis and S. H. Archer, Second Edition, Prentice-Hall, 1979. I am sure there are more up to date discussions of this point but this was the Chapter that made me think back in 1979.
+ # therefore if > 50 stocks you are taking macro bets so worth while considering macro indicators
+ The need for a well defined set of macro factors that could capture portfolio differences remained. One attempt to fill this need is a company called Quant-Insight (https://quant-insight.com), and in which I own a small
+
+                                    # backtesting
+ # https://www.reddit.com/r/algotrading/comments/ozhgq6/simple_back_test_tool/
+ # https://github.com/DaveSkender/Stock.Indicators
+ # https://querybuilder.js.org/
+ look ahead bias?
+ coskewness
+ survivorship ias
+ # observe the close and buy the close assumption will distort so need to add a lag of +1 on day return.. could be able to customise this lag to see how it would affect return with pic
+ # add fees
+ # way to add fill rates? - by looking at historical volume?
+ # spreads?
+ # data set timed correctly - ie original data no restatements
+ # find a list of ways to overfit and deatail how they could be corrected/avoided  - https://www.reddit.com/r/algotrading/comments/i0dv6l/intuitive_illustration_of_overfitting/?utm_source=share&utm_medium=web2x&context=3
+ # build in hypothesis testing?
+ # use qunatopian tearsheet on return streams
+ # Deflated Sharpe ratio is a way of dealing with overfitting. 
+ It takes into account the number of trials (backtests) that were run, variation in results, and the length of time the trials were run over. Let's say you want to come up with a moving average crossover strategy. You could backtest every pair of lookback windows up to say, 100 (that would be 9900 backtests excluding pairs that have the same window), and pick the pair that had the best Sharpe ratio.
+look at marcos de lopez book and https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2460551
+Because you did what statisticians call multiple testing. It’s a false discovery. The deflated sharpe allows you to control for the fact that you tested a million times. It puts that number of trials in the formula.
+# reasons people fail with ml in finance
+They don't understand stationary data and how it affects timeseries and ML-Models
+They don't know how to do CV with time series
+They don't know how to avoid overfit.
+They don't know what to predict in financial data 
+They massively underestimate the time it takes and how hard it is.
+They think that a complex model somehow "extracts" hidden knowledge and that there is one combination, which creates a unique feature which makes you rich (what about a XGBoost creating LSTM-Features, which then get arranged as an image and a pretrained CNN then predicts???)
+
+For me, I will use multi-task learning (a good introductory paper by Sebastian Ruder can be found here) to improve the classification accuracy against the noise and augment it with Long Short-Term Memory (LSTM) networks model to better identify the pattern in hold/sell/buy.
+
+
+                                    # R Code libraries
+
+# finrport -- is a R package in CRAN which pulls from SEC reports
+# R's Return.portfolio functio
+# https://cran.r-project.org/web/packages/finreportr/finreportr.pdf
+# https://github.com/sewardlee337/finreportr
+AnnualReports("BABA", foreign = TRUE)
+CompanyInfo("TSLA")
+GetBalanceSheet("FB", 2016)
+GetCashFlow("FB", 2016)
+GetIncome("FB", 2016)
+
+# GetEdgarData
+# https://www.r-bloggers.com/2019/10/new-package-getedgardata/
+
+
+# FinancialModelingPre allows 250 free calls 
+
+# Find best source to get Altman Z scores for companies
+
+# us visual studio code (VSCode not not visual studio)- install the right extensioons and also look into pycharm
+# type # %% on top of code block in visual studio and will be treated as a jupyter cell then shift+enter to run
+
+                               # To get a RSS News feed, for company news  -                              
+# https://soapstone.mradford.com/hn-rss-guide/
+
+                               # Reconciling data 
+# pytest is used for the unit tests
+# this is alot of best practices - https://github.com/thuijskens/production-tools
+                               
+                               
+                               # Trading Bot
+                               
+                               
+                               # ML Notes 
+#  Multi task learning in deep neural networks - https://ruder.io/multi-task/
+# data pre processing https://www.reddit.com/r/algotrading/comments/m9y9k6/a_look_at_a_few_modern_methods_of_data/
+
+                              # Books
+https://quant.stackexchange.com/questions/38886/what-are-the-quantitative-finance-papers-that-we-should-all-have-in-our-shelves
+inside the black box rishi k. narang pdf
+Algorithmic Trading, Ernest P. Chan
+Trading on Sentiment, Richard L. Peterson
+Statistical book in emails
+The Elements of Statistical Learning, Trevor Hastie, Robert Tibshirani, Jerome Friedman
+Natural Language Processing with PyTorch: Build Intelligent Language Applications Using Deep Learning, Delip Rao and Brian McMahan
+zurich axioms
+https://academic.oup.com/rfs/advance-article-abstract/doi/10.1093/rfs/hhab055/6286969?redirectedFrom=fulltext
+https://www.frontiersin.org/research-topics/22323/applications-of-generative-adversarial-models-in-financial-markets
+# https://drive.google.com/file/d/1bRI_iutvH5Y2b9mWwtGb3bjBfR41AtmT/preview
+
