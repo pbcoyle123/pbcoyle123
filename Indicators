@@ -1,0 +1,96 @@
+                                   # Indicators outside of fundamental data
+                                   
+                            need to break the below into categories
+ #  https://www.predictnow.ai/blog/introducing-pre-engineered-stock-fundamental-features-at-predictnow-ai/
+ # As SEC filings generally happen at arbitrary times on any given day, to avoid look ahead biases during backtests, the date of the associated data has been shifted to the next trading day to guarantee its availability long before the market opens.
+ # http://epchan.blogspot.com/2021/09/welcome-to-our-feature-zoo-with-600.html?m=1
+ # use feature selection and cluster based feature selection to group and rank indictators https://www.youtube.com/watch?v=lgN82ERWRTE
+ # how multiple screens could work is if we can distinguish when indicators are not properly informing us of what we need, then we drop those type of indicators and move to the more core fundamental screen
+ # hotelings t2 is a typical multivariate model’s measure of when something has gone off the rails. It is kind of like if you plot new data, expect a linear response, and look at R2 to see if shit’s gone crazy, but with more dimensions.
+ # news sentiment, earning report sentiment and conensus estimates - we can then perform analysis on this to see which spefici analysts or estimates are correct
+ # compiling upgrades and downgrades
+ # can use RSI, bollinger bands for mean reversion short term trading
+ # short interest
+ # provide econ calandar for each country with our holdings
+ # news trading using RSS  https://www.reddit.com/r/algotrading/comments/mmyrlg/data_acquisition_for_news_trading/
+ # Iexcloud has some sentiment api with premium access
+ # Benzinga Squakbox or Bloomberg both offer instant news feed --> definitely not instant, they're redistributors and by definition slow
+ UDP stream stream + colo (co-location)
+ # USE AI for news content https://eventregistry.org/
+ # indicators based on earning reports/ research reports - ie sec reports and % gain since release etc to see if gain correlated to report
+ # NLP on things like investor conferences, management speeches, etc, and then using that to make a prediction of the earnings beforehand
+ #  look at price movement ahead of the earnings as well, as information leaks ahead of the event
+ # indicators from other market order
+ # indsider buys and sells
+ # Technical indicators
+ # Kalman filter filters (var reduction)  with OLSQ (trend prediction) -- need to look up R packages- fundemental to bayesian structural time series forecasts - Kalman filters are used to extract some of the noise from a noisy signal. - https://www.cis.upenn.edu/~mkearns/finread/filtering_in_finance.pdf
+ note book on quantopian  - You can use a Kalman Filter to estimate the beta between 2 or more stocks. Then, you can use that beta to perform a linear regression.
+https://github.com/quantopian/research_public/blob/master/notebooks/lectures/Kalman_Filters/notebook.ipynb
+also shown in chapter 4 and 9 of Machine Learning for Algorithmic Trading"  -- https://github.com/PacktPublishing/Machine-Learning-for-Algorithmic-Trading-Second-Edition_Original/tree/master/04_alpha_factor_research
+# altman z score
+ # any things from cfa?
+ # statistics on distribution or regression - R etc
+ # risk parameters
+ # well defined factors such as growth, inflation, credit spreads, interest rates etc, then factors on top of this to show out of line with the historical relationship with the set of macro factors.
+ # beta of stock return and portfolio return on factors
+ # economic, trade terms, weather (weather has bad forecast errors)
+ # Sometimes you can get a warning about a change in a stock's behavior by keeping an eye on changes in the implied volatility of the stock's options.
+ # find out ways to test these indicators over random periods in the past and visualise this to show reliability to team -- 
+ # also look into if its possible to optimise indicators results into a score similar to eip score usintg walkthrough optimisation or by seeing which indicator has greatest reliability of future returns over previous random periods
+ # than 2-3% and the holdings usually exceed 50 stocks. Every portfolio is effectively a macro portfolio even when it purports to be bottom up. However you pick the stocks, you usually end up with something that is largely driven by macro factors. For those that doubt the veracity of the paragraph take a look at Chapter IX of Portfolio Analysis by J.C. Francis and S. H. Archer, Second Edition, Prentice-Hall, 1979. I am sure there are more up to date discussions of this point but this was the Chapter that made me think back in 1979.
+ # therefore if > 50 stocks you are taking macro bets so worth while considering macro indicators
+ The need for a well defined set of macro factors that could capture portfolio differences remained. One attempt to fill this need is a company called Quant-Insight (https://quant-insight.com), and in which I own a small
+
+
+
+###   https://www.predictnow.ai/blog/new-additions-to-the-predictnow-ai-factor-zoo-2/
+
+# Option indicators
+Net options pricing effect – is a normalized measure of the net delta imbalance between the put and call options of a traded instrument across its entire option chain, calculated at the market close for contracts of all maturities. This indicator was invented by Lily Francus (Twitter: @nope_its_lily) and is normalized with the total traded volume of the underlying instrument. The imbalance estimates the amount of delta hedging by market markers needed to keep their positions delta-neutral. This hedging causes price movement in the underlying, which NOPE should ideally capture. 
+“Carry”,  defined a carry feature as, “the return on a futures position when the price stays constant over the holding period”. (It is also called “roll yield” or “convenience yield”.) We calculate carry for 1) global equities – calculated as a ratio of expected dividend and daily close prices; 2) SPX futures – calculated from price of front month SPX futures contract and spot price of the index; and3) Currency –  calculated from the two nearest months futures data.
+
+# Macro factors
+Market index adjusted by inflation, money supply – mainly calculated for the US – SP500 adjusted for CPI, PCE, M1 and M2 – tells us if the market index is “inflated” or bubbled up by increased money supply or increasing prices. All these features are daily percentage changes, to make them stationary.
+Principal components of continuous maturity bond data
+three PCs have been prime candidates in this regard as they generally explain over 99% of the variability in the term structure of bond yields and, due to their loadings, may be interpreted as the level, slope and curvature factor
+ level, slope and curvature factor  - https://www.sipotra.it/wp-content/uploads/2021/01/Equity-tail-risk-in-the-treasury-bond-market.pdf
+Common sovereign ratios (calculated month-on-month and year-on-year)
+Sovereign Debt normalised with GDP
+Foreign Exchange normalised with GDP,
+Government spending normalised to GDP
+Current account balance to normalised GDP
+Government Budget balance normalised by GDP
+Labour force as a percentage of population
+ Fixed income term premia –
+Current Account Balance – the percentage change in a country’s international transactions with other countries.
+Exports – the percentage change in a country’s exports to other countries.
+Industrial production – the percentage change in a country’s output by industrial sector.
+Imports – the percentage change in a country’s imports from other countries.
+Money supply – the percentage change in a country’s M2 money supply.
+Retail Sales Index- the percentage change in a country’s demand for durable and non-durable goods.
+Employment –  the percentage change in a country’s employment numbers.
+Housing Starts – the percentage change in a country’s new residential construction projects.
+Trade balance – the percentage change in a country’s net sum of imports and exports.
+Unemployment rate – the percentage change in a country’s percentage of labour that is jobless.
+Labour force – the percentage change in a country’s active labour force.
+Foreign Exchange Reserves – the percentage change in a country’s forex reserves.
+Consumer Price Index – the percentage change in a country’s CPI inflation measure.
+Wholesale Price Index – the percentage change in a country’s WPI inflation measure.
+Government Spending – the percentage change in a country’s government spending.
+Fixed Investment – the percentage change in a country’s assets.
+Personal Consumption Expenditure – the percentage change in a country’s household expenditures.
+Government debt – the percentage change in a country’s government debt.
+Gross Domestic product – the percentage change in a country’s gross domestic product.
+Read Gross domestic product – GDP adjusted for inflation.
+GDP Price deflator –  the percentage change in a country’s price levels.
+a) Seasonally adjusted Employment
+b) Seasonally adjusted  Retail Sales Index
+c) Seasonally adjusted Housing Starts
+Total Credit to the non-financial sector- is a leading indicator and can inform us about movement in indicators like Gross domestic product in the future. We calculate the quarter-on-quarter change for these features.
+Treasury Interest rate spreads – various combinations of spreads between sovereign yields of various maturities. These produce the slopes of the yield curves. Read more about the difference between term spread and term premium here.
+Retail Inventory to Sales ratio – The percentage of inventory for durable and non-durable goods is sold. This can forecast changes in gross domestic product. We calculate the month-on-month change for these features.
+Feds Fund rate – daily percentage change in the interbank overnight rate at which excess reserves based on bank requirements are lent or borrowed. The FOMC makes its decisions about rate adjustments based on key economic indicators that may show signs of inflation, recession, or other issues that can affect sustainable economic growth.
+
+#####  Order Flow  - This feature is calculated using tick data from Algoseek with aggressor tags (which flag the trade as a buy or sell market order). The data is time-stamped at milliseconds. We aggregate the tick-based order flow to form order flow per minute.
+ie aggregate the buys and sells per minute and give this as an analytic ie  This would be reflect in our feature as Time:10:01 , Order flow :-9
+
